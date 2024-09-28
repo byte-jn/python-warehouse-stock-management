@@ -23,4 +23,4 @@ CSV: Eine Standardbibliothek in Python, die für das Lesen und Schreiben von CSV
 Datetime: Eine Standardbibliothek in Python, die für die Handhabung von Datum und Uhrzeit verwendet wird und Funktionen zum Formatieren und Vergleichen von Zeitinformationen bietet.
 
 # Erweiterung
-Das Skript new-stock.py erstellt zufällig generierte CSV-Dateien, die Produktbestände simulieren. Es wird häufig in der Test- und Entwicklungsphase von Softwareprojekten eingesetzt, um Dummy-Daten zu erzeugen.
+Das Skript new-stock.py erstellt zufällig generierte CSV-Dateien, die Produktbestände simulieren. Es wird häufig in der Test- und Entwicklungsphase von Softwareprojekten eingesetzt, um Dummy-Daten zu erzeugen
