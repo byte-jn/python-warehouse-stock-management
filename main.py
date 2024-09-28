@@ -2,43 +2,43 @@ import os, shutil, re
 from glob import glob
 import pandas as pd
 
-# Die Verzeichnisangaben
+# The directory specifications
 Path = "new"
 updatedPath = "processed"
 stockext = "*stock.csv"
 
-# Suchen aller Dateien in dem Verzeichnis
+# Search for all files in the directory
 all_stock_file = [file
                  for path, subdir, files in os.walk(Path)
                  for file in glob(os.path.join(path, stockext))]
 
-# Verzeichnis der Datenbank
+# Directory of the database
 data = pd.read_csv("databasestock.csv")
 
-# Verarbeitung aller Dateien nacheinander
+# Processing all files one by one
 for file in all_stock_file:
-    # Datei wird ausgelesen
+    # Read the file
     temp = pd.read_csv(file)
 
-    # Dateiname wird ausgelesen
+    # Read the filename
     dateiname = os.path.basename(file)
 
-    # Suche nach dem Länderkürzel
+    # Search for the country code
     pattern = r'-([A-Z]{2})-stock\.csv'
     match = re.search(pattern, dateiname)
     if match:
         ctry = match.group(1)
-        temp["country"] = ctry  # Länderkürzel schreiben
+        temp["country"] = ctry  # Write the country code
 
-    for i, row in temp.iterrows():  # Zusammenführung der Dateien
-        match = (data['product_id'] == row['product_id']) & (data['country'] == row['country'])  # Vergleicht, was gleich ist
-        if match.any():  # Wenn es gleich ist, wird es überschrieben
+    for i, row in temp.iterrows():  # Merging the files
+        match = (data['product_id'] == row['product_id']) & (data['country'] == row['country'])  # Compare what is equal
+        if match.any():  # If they are equal, overwrite it
             data.loc[match, 'quantity'] = row['quantity']
-        else:  # Wenn es nicht gleich ist, wird es in eine neue Zeile geschrieben
+        else:  # If they are not equal, write it into a new row
             data = pd.concat([data, temp.iloc[[i]]], ignore_index=True)
 
-    # Dateien werden nach Bearbeitung in das "processed"-Verzeichnis verschoben
+    # After processing, move files to the "processed" directory
     shutil.move(file, updatedPath)
 
-# Am Ende wird es in databasestock gespeichert
+# At the end, save it in databasestock
 data.to_csv("databasestock.csv", mode="w", index=False)
