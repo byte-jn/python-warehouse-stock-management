@@ -1,26 +1,25 @@
 # python-warehouse-stock-management
- 
-Das Hauptskript dient dazu, Lagerbestandsdaten aus verschiedenen CSV-Dateien zu integrieren und diese in einer zentralen Datenbank zu aktualisieren. Es ermöglicht die Organisation und Verwaltung von Lagerbeständen aus unterschiedlichen Ländern und stellt sicher, dass die zentralen Daten immer aktuell sind.
+The main script is designed to integrate inventory data from various CSV files and update this information in a central database. It allows for the organization and management of inventory from different countries, ensuring that the central data is always up to date.
 
-# Wichtige Anforderungen
+# Important Requirements
 
-Pandas: Eine leistungsstarke Bibliothek zur Datenmanipulation und -analyse, die zum Lesen und Verarbeiten von CSV-Dateien verwendet wird.
+Pandas: A powerful library for data manipulation and analysis, used for reading and processing CSV files.
 
-Installation: Wenn Sie Pandas noch nicht installiert haben, können Sie dies mit pip tun. Öffnen Sie ein Terminal oder eine Eingabeaufforderung und führen Sie den folgenden Befehl aus: 'pip install pandas'
+Installation: If you haven't installed Pandas yet, you can do so using pip. Open a terminal or command prompt and run the following command: pip install pandas
 
-# Bibiotheken:
+# Libraries:
 
-OS: Eine Standardbibliothek in Python, die zur Interaktion mit dem Betriebssystem verwendet wird, wie z. B. für Datei- und Verzeichnisoperationen.
+OS: A standard library in Python used for interacting with the operating system, such as for file and directory operations.
 
-Shutil: Eine Standardbibliothek in Python, die für hochrangige Dateioperationen wie Kopieren und Verschieben von Dateien verwendet wird.
+Shutil: A standard library in Python used for high-level file operations, such as copying and moving files.
 
-Glob: Eine Standardbibliothek in Python, die für die Dateimustererkennung verwendet wird und es ermöglicht, Dateien mit spezifischen Namensmustern zu finden.
+Glob: A standard library in Python used for file pattern matching, allowing you to find files with specific naming patterns.
 
-Random: Eine Standardbibliothek in Python, die zur Generierung von Zufallszahlen und -elementen verwendet wird.
+Random: A standard library in Python used for generating random numbers and elements.
 
-CSV: Eine Standardbibliothek in Python, die für das Lesen und Schreiben von CSV-Dateien zuständig ist und das Arbeiten mit tabellarischen Daten erleichtert.
+CSV: A standard library in Python responsible for reading and writing CSV files, making it easier to work with tabular data.
 
-Datetime: Eine Standardbibliothek in Python, die für die Handhabung von Datum und Uhrzeit verwendet wird und Funktionen zum Formatieren und Vergleichen von Zeitinformationen bietet.
+Datetime: A standard library in Python used for handling dates and times, providing functions for formatting and comparing time information.
 
-# Erweiterung
-Das Skript new-stock.py erstellt zufällig generierte CSV-Dateien, die Produktbestände simulieren. Es wird häufig in der Test- und Entwicklungsphase von Softwareprojekten eingesetzt, um Dummy-Daten zu erzeugen.
+# Extension
+The script new-stock.py creates randomly generated CSV files that simulate product stocks. It is commonly used in the testing and development phase of software projects to generate dummy data.
